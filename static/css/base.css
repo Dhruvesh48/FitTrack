@@ -1,0 +1,50 @@
+body{
+    font-family: "Open Sans", serif;
+}
+
+/* custom.css */
+.custom-navbar {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.custom-navbar .nav-link {
+    color: #ffffff;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #ff9900;
+}
+
+.custom-navbar .navbar-brand {
+    color: #ff9900;
+}
+
+.navbar-toggler i {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-toggler i:hover {
+    color: #ff9900;
+}
+
+.nav-item .badge {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    font-size: 0.8rem;
+    transform: translate(-50%, -30%);
+    background-color: #dc3545;
+    color: white;
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem;
+    z-index: 10;
+}
+
+.nav-item .nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
