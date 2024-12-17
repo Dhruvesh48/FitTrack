@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+    <div class="row">
+        {% for product in products %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% elif product.image_url %}
+                        <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% else %}
+                        <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="default product image">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">${{ product.price }}</p>
+                        <p class="card-text">{{ product.description|truncatewords:15 }}</p>
+                        
+                        <!-- Display Rating -->
+                        {% if product.rating %}
+                            <p class="card-text">
+                                <strong>Rating:</strong> {{ product.rating }} / 5
+                            </p>
+                        {% endif %}
+
+                        <a href="#" class="btn btn-primary view-details-btn mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+{% endblock %}
