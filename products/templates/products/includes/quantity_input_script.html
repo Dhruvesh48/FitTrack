@@ -1,0 +1,37 @@
+<script>
+    $(document).ready(function() {
+        // Increment functionality for quantity
+        $('[id^="incrementBtn_"]').click(function() {
+            var itemId = $(this).attr('id').split('_')[1];  // Get the unique product ID
+            var quantityInput = $('#quantity_' + itemId); // Target the corresponding quantity input
+            var currentVal = parseInt(quantityInput.val());
+
+            if (currentVal < 99) {
+                quantityInput.val(currentVal + 1);
+            }
+        });
+
+        // Decrement functionality for quantity
+        $('[id^="decrementBtn_"]').click(function() {
+            var itemId = $(this).attr('id').split('_')[1];  // Get the unique product ID
+            var quantityInput = $('#quantity_' + itemId); // Target the corresponding quantity input
+            var currentVal = parseInt(quantityInput.val());
+
+            if (currentVal > 1) {
+                quantityInput.val(currentVal - 1);
+            }
+        });
+
+        // Ensure the value stays within the range 1 to 99 for each quantity input
+        $('[id^="quantity_"]').on('input', function() {
+            var itemId = $(this).attr('id').split('_')[1];  // Get the unique product ID
+            var currentVal = parseInt($(this).val());
+
+            if (currentVal < 1) {
+                $(this).val(1);
+            } else if (currentVal > 99) {
+                $(this).val(99);
+            }
+        });
+    });
+</script>
