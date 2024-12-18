@@ -49,7 +49,7 @@
                     <!-- New Bag Link -->
                     {% if grand_total %}
                         <li class="nav-item {% if request.path == '/bag/' %}active{% endif %}">
-                            <a class="nav-link position-relative" href="#">
+                            <a class="nav-link position-relative" href="{% url 'view_bag' %}">
                                 <i class="fas fa-shopping-bag"></i> Bag
                                 {% if product_count > 0 %}
                                     <!-- Red Notification Badge -->

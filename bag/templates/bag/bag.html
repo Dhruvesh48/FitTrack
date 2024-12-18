@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'bag/css/bag.css' %}">
+{% endblock %}
+
 {% block content %}
 <section class="container py-5">
     <h2 class="text-center mb-4">Your Shopping Bag</h2>
@@ -50,7 +54,7 @@
                         <!-- Quantity -->
                         <td>
                             <div class="d-flex justify-content-between">
-                                <form method="POST" class="quantity-form" action="{% url 'update_bag_item' item.item_id %}">
+                                <form method="POST" class="quantity-form" action="#">
                                     {% csrf_token %}
                                     <div class="form-group">
                                         <div class="input-group">
@@ -73,7 +77,7 @@
                                     </div>
                                     <button type="submit" class="btn btn-outline-secondary mt-3">Update</button>
                                 </form>
-                                <form method="POST" action="{% url 'remove_from_bag' item.item_id %}">
+                                <form method="POST" action="#">
                                     {% csrf_token %}
                                     {% if item.product.has_sizes %}
                                         <input type="hidden" name="product_size" value="{{ item.size }}">
@@ -110,7 +114,7 @@
 
         <!-- Actions -->
         <div class="mt-3 d-flex justify-content-between">
-            <a href="#" class="btn btn-outline-secondary">Continue Shopping</a>
+            <a href="{% url 'product_page' %}" class="btn btn-outline-secondary">Continue Shopping</a>
             <a href="#" class="btn btn-outline-secondary">Proceed to Checkout</a>
         </div>
     {% endif %}

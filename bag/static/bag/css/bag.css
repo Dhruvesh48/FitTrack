@@ -1,0 +1,27 @@
+.text-truncate {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow-x: auto;
+    text-overflow: inherit;
+    -webkit-overflow-scrolling: touch;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container .row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.product-image {
+    width: 80px;  
+    height: auto;
+}
