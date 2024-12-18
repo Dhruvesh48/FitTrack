@@ -17,6 +17,13 @@ def product_page(request):
     elif sort_by == 'rating_low_to_high':
         products = products.order_by('rating')
 
+    category_filter = request.GET.get('category', None)
+    
+    if category_filter:
+        products = Product.objects.filter(category=category_filter)
+    else:
+        products = Product.objects.all()
+
     context = {
         'products': products
     }
