@@ -65,3 +65,7 @@ body{
     background-color: #cc7a00;
     border-color: #cc7a00;
 }
+
+.custom-text-color{
+    color: #ff9900;
+}

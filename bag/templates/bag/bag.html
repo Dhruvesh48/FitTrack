@@ -54,7 +54,7 @@
                         <!-- Quantity -->
                         <td>
                             <div class="d-flex justify-content-between">
-                                <form method="POST" class="quantity-form" action="#">
+                                <form method="POST" class="quantity-form" action="{% url 'update_bag_item' item.item_id %}">
                                     {% csrf_token %}
                                     <div class="form-group">
                                         <div class="input-group">
@@ -107,7 +107,7 @@
                 {% endif %}
             </p>
             {% if free_delivery_delta > 0 %}
-                <p><strong>Spend ${{ free_delivery_delta|floatformat:2 }} more to get free delivery!</strong></p>
+                <p class="custom-text-color"><strong>Spend ${{ free_delivery_delta|floatformat:2 }} more to get free delivery!</strong></p>
             {% endif %}
             <h4><strong>Grand Total:</strong> ${{ grand_total|floatformat:2 }}</h4>
         </div>
@@ -119,4 +119,9 @@
         </div>
     {% endif %}
 </section>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
