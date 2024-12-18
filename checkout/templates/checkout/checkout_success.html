@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout_success.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="checkout-success-page">
+    <div class="container py-5">
+        <!-- Thank You Section -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="success-title mb-3">Thank You for Your Order!</h1>
+                <p class="order-number mb-2">
+                    Your order number is <strong>{{ order.order_number }}</strong>.
+                </p>
+                <p class="confirmation-text mb-4">
+                    A confirmation email has been sent to 
+                    <strong>{{ order.email }}</strong>. Please keep this email for your records.
+                </p>
+                <a href="{% url 'product_page' %}" class="btn btn-outline-secondary btn-lg">Continue Shopping</a>
+            </div>
+        </div>
+
+        <!-- Order Summary Section -->
+        <div class="row mt-5">
+            <div class="col-12 col-lg-8 mx-auto">
+                <div class="order-summary border rounded p-4">
+                    <h2 class="order-summary-title text-center mb-4">Order Summary</h2>
+                    <div class="order-summary-details">
+                        <div class="row mb-2">
+                            <div class="col-6 text-left">
+                                <strong>Order Total:</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                ${{ order.order_total|floatformat:2 }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-6 text-left">
+                                <strong>Delivery Charge:</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                ${{ order.delivery_cost|floatformat:2 }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 text-left">
+                                <strong>Grand Total:</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                ${{ order.grand_total|floatformat:2 }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delivery Details Section -->
+        <div class="row mt-5">
+            <div class="col-12 col-lg-8 mx-auto">
+                <div class="delivery-details border rounded p-4">
+                    <h2 class="delivery-details-title text-center mb-4">Delivery Details</h2>
+                    <div class="delivery-details-content">
+                        <div class="row mb-2">
+                            <div class="col-6 text-left">
+                                <strong>Name:</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                {{ order.full_name }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-6 text-left">
+                                <strong>Address Line 1:</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                {{ order.street_address1 }}
+                            </div>
+                        </div>
+                        {% if order.street_address2 %}
+                        <div class="row mb-2">
+                            <div class="col-6 text-left">
+                                <strong>Address Line 2:</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                {{ order.street_address2 }}
+                            </div>
+                        </div>
+                        {% endif %}
+                        <div class="row mb-2">
+                            <div class="col-6 text-left">
+                                <strong>Town/City:</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                {{ order.town_or_city }}
+                            </div>
+                        </div>
+                        {% if order.county %}
+                        <div class="row mb-2">
+                            <div class="col-6 text-left">
+                                <strong>County:</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                {{ order.county }}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if order.postcode %}
+                        <div class="row mb-2">
+                            <div class="col-6 text-left">
+                                <strong>Postcode:</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                {{ order.postcode }}
+                            </div>
+                        </div>
+                        {% endif %}
+                        <div class="row mb-2">
+                            <div class="col-6 text-left">
+                                <strong>Country:</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                {{ order.country }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 text-left">
+                                <strong>Phone Number:</strong>
+                            </div>
+                            <div class="col-6 text-right">
+                                {{ order.phone_number }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
