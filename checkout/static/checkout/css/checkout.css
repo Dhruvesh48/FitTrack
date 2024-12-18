@@ -1,0 +1,98 @@
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+.order-summary-container {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.item-image {
+  width: 50px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.checkout-success-page {
+  margin-top: 50px;
+}
+
+.success-title {
+  font-size: 2.5rem;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.order-number {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.confirmation-text {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.order-summary-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+select,
+select option {
+  color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+  color: #aab7c4 !important;
+}
+
+#loading-overlay {
+	display: none;
+	position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 162, 184, .85);
+  z-index: 9999;
+}
+
+.loading-spinner {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100%;
+}
