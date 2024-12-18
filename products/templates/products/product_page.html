@@ -7,6 +7,43 @@
 
 {% block content %}
 <section class="container py-5">
+    <nav class="navbar navbar-expand-lg custom-navbar mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Products</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCategories" aria-controls="navbarCategories" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCategories">
+                <ul class="navbar-nav ml-auto">
+                    <!-- Dropdown for Sorting by Price or Rating -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarSorting" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sort By
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarSorting">
+                            <a class="dropdown-item" href="#">Price: Low to High</a>
+                            <a class="dropdown-item" href="#">Price: High to Low</a>
+                            <a class="dropdown-item" href="#">Rating: High to Low</a>
+                            <a class="dropdown-item" href="#">Rating: Low to High</a>
+                        </div>
+                    </li>
+
+                    <!-- Categories Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarCategoriesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarCategoriesDropdown">
+                            <a class="dropdown-item" href="#">Equipment</a>
+                            <a class="dropdown-item" href="#">Nutrition</a>
+                            <a class="dropdown-item" href="#">Merchandise</a>
+                            <a class="dropdown-item" href="{% url 'product_page' %}">All Products</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="row">
         {% for product in products %}
             <div class="col-md-4 mb-4">
