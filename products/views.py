@@ -7,6 +7,16 @@ def product_page(request):
 
     products = Product.objects.all()
 
+    sort_by = request.GET.get('sort_by', None)
+    if sort_by == 'price_low_to_high':
+        products = products.order_by('price')
+    elif sort_by == 'price_high_to_low':
+        products = products.order_by('-price')
+    elif sort_by == 'rating_high_to_low':
+        products = products.order_by('-rating')
+    elif sort_by == 'rating_low_to_high':
+        products = products.order_by('rating')
+
     context = {
         'products': products
     }
