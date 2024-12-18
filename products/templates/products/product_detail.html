@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="container py-5">
+    <div class="row">
+        <!-- Product Image Section -->
+        <div class="col-md-6">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
+            {% elif product.image_url %}
+                <img src="{{ product.image_url }}" class="img-fluid" alt="{{ product.name }}">
+            {% else %}
+                <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid" alt="default product image">
+            {% endif %}
+        </div>
+
+        <!-- Product Details Section -->
+        <div class="col-md-6">
+            <h2>{{ product.name }}</h2>
+            <small class="muted">{{ product.sku }}</small>
+            <p><strong>${{ product.price }}</strong></p>
+            <p>{{ product.description }}</p>
+            
+            {% if product.rating %}
+                <p><strong>Rating:</strong> {{ product.rating }} / 5</p>
+            {% else %}
+                <p><strong>Rating:</strong> Not Rated</p>
+            {% endif %}
+            
+            <!-- Add to Bag Form -->
+            <form method="POST" action="#">
+                {% csrf_token %}
+                {% if product.has_sizes %}
+                    <div class="form-group">
+                        <p><strong>Size:</strong></p>
+                        <select name="product_size" class="form-control">
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M" selected>M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                {% endif %}
+                
+                <!-- Quantity Selector -->
+                <div class="form-group">
+                    <div class="input-group">
+                        <!-- Decrement Button -->
+                        <button type="button" class="btn btn-outline-secondary" id="decrementBtn_{{ product.id }}">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        
+                        <!-- Quantity Input -->
+                        <input type="number" id="quantity_{{ product.id }}" name="quantity" class="form-control custom-input" value="1" min="1" max="99">
+                        
+                        <!-- Increment Button -->
+                        <button type="button" class="btn btn-outline-secondary" id="incrementBtn_{{ product.id }}">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-between">
+                    <a href="{% url 'product_page' %}" class="btn btn-outline-secondary">
+                        <i class="fa-solid fa-angle-left"></i> Keep Shopping
+                    </a>         
+                    <button type="submit" class="btn btn-outline-secondary">Add to Bag</button>
+                </div>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

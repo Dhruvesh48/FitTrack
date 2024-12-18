@@ -48,3 +48,20 @@ body{
     display: inline-flex;
     align-items: center;
 }
+
+.nav-item.active .nav-link {
+    color: #ff9900;
+}
+
+.view-details-btn,
+.btn-outline-secondary{
+    background-color: #333333;
+    border-color: #333333;
+    color: white;
+}
+
+.view-details-btn:hover,
+.btn-outline-secondary:hover {
+    background-color: #cc7a00;
+    border-color: #cc7a00;
+}

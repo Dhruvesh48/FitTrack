@@ -19,7 +19,7 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     object-fit: cover;
-    height: 400px;
+    height: 300px;
     width: 100%;
 }
 
@@ -43,19 +43,6 @@
 .container .row {
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-.view-details-btn,
-.btn-outline-secondary{
-    background-color: #333333;
-    border-color: #333333;
-    color: white;
-}
-
-.view-details-btn:hover,
-.btn-outline-secondary:hover {
-    background-color: #cc7a00;
-    border-color: #cc7a00;
 }
 
 .form-control {
