@@ -1,0 +1,67 @@
+/* Plan List Styling */
+.card.custom-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 100%;
+    width: 120%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
+}
+
+.card-title {
+    color: #ff9900;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.card-body p {
+    margin-bottom: 10px; 
+}
+
+/* Responsive Card Layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-md-4 {
+    flex: 1 0 32%;
+    margin-bottom: 30px;
+}
+
+.col-md-4 .card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make cards stack on smaller screens */
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 1 0 100%;
+    }
+}

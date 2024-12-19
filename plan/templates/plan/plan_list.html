@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'plan/css/plan.css' %}">
+{% endblock %}
+
+{% block content %}
+  <!-- Subscription Plans Section -->
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Available Subscription Plans</h1>
+    
+    <!-- Row for Cards -->
+    <div class="row">
+      {% for plans in plan %}
+        <div class="col-md-4 mb-4">
+          <div class="card custom-card shadow-sm border-light">
+            <div class="card-header">
+                <h5 class="card-title">{{ plans.name }}</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">{{ plans.description }}</p>
+              <p><strong>Price:</strong> ${{ plans.price }}</p>
+              <p><strong>Duration:</strong> {{ plans.get_duration_in_days }} days</p>
+              <p><strong>Features:</strong> {{ plans.features }}</p>
+              <a href="#" class="btn btn-outline-secondary btn-block">Subscribe</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
