@@ -60,14 +60,19 @@ def add_to_bag(request, item_id, item_type):
                 messages.success(request, f'Added {item.name} to your bag')
 
     elif item_type == 'plan':
-        if item_id in list(bag['plans'].keys()):
-            messages.info(request, f'{item.name} is already in your bag.')
+        if len(bag['plans']) > 0:
+            messages.error(request, "You can only add one subscription plan to your bag at a time.")
         else:
-            bag['plans'][item_id] = {'name': item.name, 'price': float(item.price)}
-            messages.success(request, f'Added {item.name} to your bag')
+            if item_id not in list(bag['plans'].keys()):
+                bag['plans'][item_id] = {'name': item.name, 'price': float(item.price)}
+                messages.success(request, f'Added {item.name} to your bag')
+            else:
+                messages.info(request, f'{item.name} is already in your bag.')
 
     request.session['bag'] = bag
+
     return redirect(redirect_url)
+
 
 def update_bag_item(request, item_id):
     """Adjust the quantity of the specified product to the specified amount."""

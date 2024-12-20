@@ -3,8 +3,10 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
+from decimal import Decimal
 
 from products.models import Product
+from plan.models import Plan
 
 
 class Order(models.Model):
@@ -57,7 +59,8 @@ class Order(models.Model):
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.CASCADE)
+    plan = models.ForeignKey(Plan, null=True, blank=True, on_delete=models.CASCADE)
     product_size = models.CharField(max_length=10, null=True, blank=True)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
@@ -65,10 +68,20 @@ class OrderLineItem(models.Model):
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem total
-        and update the order total.
+        and update the order total based on product or plan.
         """
-        self.lineitem_total = self.product.price * self.quantity
+        if self.product:
+            self.lineitem_total = Decimal(self.product.price) * self.quantity
+        elif self.plan:
+            self.lineitem_total = Decimal(self.plan.price) * self.quantity
+        else:
+            self.lineitem_total = Decimal('0.00')
+
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'SKU {self.product.sku} on order {self.order.order_number}'
+        if self.product:
+            return f'Product SKU {self.product.sku} on order {self.order.order_number}'
+        elif self.plan:
+            return f'Plan {self.plan.name} on order {self.order.order_number}'
+        return f'Unknown item on order {self.order.order_number}'

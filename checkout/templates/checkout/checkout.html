@@ -23,23 +23,54 @@
                     {% for item in bag_items %}
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <div class="d-flex align-items-center">
-                                <a href="{% url 'product_detail' item.product.id %}">
-                                    {% if item.product.image %}
-                                        <img class="item-image" src="{{ item.product.image.url }}" 
-                                             alt="{{ product.name }}">
-                                    {% else %}
-                                        <img class="item-image" src="{{ MEDIA_URL }}noimage.png" 
-                                             alt="{{ product.name }}">
-                                    {% endif %}
-                                </a>
+                                {% if item.product %}
+                                    <a href="{% url 'product_detail' item.product.id %}">
+                                        {% if item.product.image %}
+                                            <img class="item-image" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                        {% else %}
+                                            <img class="item-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                        {% endif %}
+                                    </a>
+                                {% else %}
+                                    <!-- No product link for plans, just show plan name and details -->
+                                    <span class="item-image-placeholder">
+                                        <img class="item-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                    </span>
+                                {% endif %}
                                 <div class="ml-3">
-                                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                    <p class="my-0 small text-muted">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                                    <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                                    <p class="my-0">
+                                        <strong>
+                                            {% if item.product %}
+                                                {{ item.product.name }}  <!-- Display product name -->
+                                            {% else %}
+                                                {{ item.name }}  <!-- Display plan name if it's a plan -->
+                                            {% endif %}
+                                        </strong>
+                                    </p>
+                                    {% if item.product.plan %}
+                                        <p class="my-0 small text-muted">Plan: {{ item.product.plan.name }}</p>
+                                    {% else %}
+                                        <p class="my-0 small text-muted">{% if item.product.has_sizes %}Size: {{ item.size|upper }}{% endif %}</p>
+                                    {% endif %}
+                                    <p class="my-0 small text-muted">
+                                        {% if item.product %}
+                                            Qty: {{ item.quantity }}
+                                        {% else %}
+                                            Qty: 1
+                                        {% endif %}         
+                                    </p>
                                 </div>
                             </div>
                             <div>
-                                <p class="my-0 small"><strong>${{ item.product.price | calc_subtotal:item.quantity }}</strong></p>
+                                <p class="my-0 small">
+                                    <strong>
+                                        {% if item.product %}
+                                            ${{ item.product.price | calc_subtotal:item.quantity }}  <!-- Subtotal for products -->
+                                        {% else %}
+                                            ${{ item.price }}  <!-- Price for plans (no quantity) -->
+                                        {% endif %}
+                                    </strong>
+                                </p>
                             </div>
                         </div>
                     {% endfor %}
@@ -68,10 +99,10 @@
                     <fieldset class="checkout-fieldset">
                         <legend>Personal Details</legend>
                         <div class="form-group">
-                            {{ order_form.full_name| as_crispy_field }}
+                            {{ order_form.full_name|as_crispy_field }}
                         </div>
                         <div class="form-group">
-                            {{ order_form.email| as_crispy_field }}
+                            {{ order_form.email|as_crispy_field }}
                         </div>
                     </fieldset>
 
@@ -79,25 +110,25 @@
                     <fieldset class="checkout-fieldset">
                         <legend>Delivery Details</legend>
                         <div class="form-group">
-                            {{ order_form.phone_number| as_crispy_field }}
+                            {{ order_form.phone_number|as_crispy_field }}
                         </div>
                         <div class="form-group">
-                            {{ order_form.street_address1| as_crispy_field }}
+                            {{ order_form.street_address1|as_crispy_field }}
                         </div>
                         <div class="form-group">
-                            {{ order_form.street_address2| as_crispy_field }}
+                            {{ order_form.street_address2|as_crispy_field }}
                         </div>
                         <div class="form-group">
-                            {{ order_form.town_or_city| as_crispy_field }}
+                            {{ order_form.town_or_city|as_crispy_field }}
                         </div>
                         <div class="form-group">
-                            {{ order_form.county| as_crispy_field }}
+                            {{ order_form.county|as_crispy_field }}
                         </div>
                         <div class="form-group">
-                            {{ order_form.postcode| as_crispy_field }}
+                            {{ order_form.postcode|as_crispy_field }}
                         </div>
                         <div class="form-group">
-                            {{ order_form.country| as_crispy_field }}
+                            {{ order_form.country|as_crispy_field }}
                         </div>
                         <div class="form-check">
                             {% if user.is_authenticated %}
@@ -111,8 +142,7 @@
                             {% endif %}
                         </div>
                     </fieldset>
-
-                    <!-- Payment Details -->
+                    
                     <fieldset class="checkout-fieldset">
                         <legend>Payment</legend>
                         <div id="card-element" class="form-group">
@@ -121,6 +151,13 @@
                         <div id="card-errors" class="form-error text-danger" role="alert"></div>
                         <!-- Pass the client secret to the view so we can get the payment intent id -->
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                        <!-- Pass additional plan-related data if available -->
+                        {% if bag_items %}
+                            <input type="hidden" name="is_plan_payment" value="{% if bag_items.0.product.plan %}true{% else %}false{% endif %}">
+                            {% if bag_items.0.product.plan %}
+                                <input type="hidden" name="plan_id" value="{{ bag_items.0.product.plan.id }}">
+                            {% endif %}
+                        {% endif %}
                     </fieldset>
 
                     <!-- Submit Button -->
@@ -142,6 +179,7 @@
     </h1>
 </div>
 {% endblock %}
+
 {% block postloadjs %}
     {{ block.super }}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
