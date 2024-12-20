@@ -10,7 +10,6 @@
   <div class="container my-5">
     <h1 class="text-center mb-4">Available Subscription Plans</h1>
     
-    <!-- Row for Cards -->
     <div class="row">
       {% for plans in plan %}
         <div class="col-md-4 mb-4">
@@ -23,11 +22,17 @@
               <p><strong>Price:</strong> ${{ plans.price }}</p>
               <p><strong>Duration:</strong> {{ plans.get_duration_in_days }} days</p>
               <p><strong>Features:</strong> {{ plans.features }}</p>
-              <a href="#" class="btn btn-outline-secondary btn-block">Subscribe</a>
+              
+              <form action="{% url 'add_to_bag' plans.id 'plan' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="redirect_url" value="{% url 'plan_list' %}">
+                <button type="submit" class="btn btn-outline-secondary btn-block">Subscribe</button>
+              </form>
             </div>
           </div>
         </div>
       {% endfor %}
     </div>
   </div>
+  
 {% endblock %}

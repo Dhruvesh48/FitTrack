@@ -21,17 +21,34 @@
                 <thead>
                     <tr>
                         <th>Image</th>
-                        <th>Product</th>
+                        <th>Item</th>
                         <th>Size</th>
                         <th>Quantity</th>
                         <th>Price</th>
                         <th>Total</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for item in bag_items %}
                     <tr>
-                        <!-- Product Image -->
+                        <!-- Plan Handling -->
+                        {% if item.plan %}
+                        <td>N/A</td>
+                        <td>{{ item.name }}</td>
+                        <td>N/A</td>
+                        <td>1</td>
+                        <td>${{ item.price }}</td>
+                        <td>${{ item.price }}</td>
+                        <td>
+                            <form method="POST" action="{% url 'remove_from_bag' item.item_id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-outline-secondary">Remove</button>
+                            </form>
+                        </td>
+                        
+                        <!-- Product Handling -->
+                        {% else %}
                         <td>
                             {% if item.product.image %}
                                 <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-thumbnail product-image">
@@ -39,11 +56,7 @@
                                 <img src="{{ MEDIA_URL }}noimage.png" alt="No Image" class="img-thumbnail product-image">
                             {% endif %}
                         </td>
-
-                        <!-- Product Name -->
                         <td class="text-truncate">{{ item.product.name }}</td>
-
-                        <!-- Size -->
                         <td>
                             {% if item.product.has_sizes %}
                                 {{ item.size|upper }}
@@ -51,48 +64,38 @@
                                 N/A
                             {% endif %}
                         </td>
-
-                        <!-- Quantity -->
                         <td>
-                            <div class="d-flex justify-content-between">
-                                <form method="POST" class="quantity-form" action="{% url 'update_bag_item' item.item_id %}">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <!-- Decrement Button -->
-                                            <button type="button" class="btn btn-outline-secondary" id="decrementBtn_{{ item.item_id }}">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
-                                            
-                                            <!-- Quantity Input -->
-                                            <input type="number" id="quantity_{{ item.item_id }}" name="quantity" class="form-control custom-input" value="{{ item.quantity }}" min="1" max="99">
-                                            
-                                            <!-- Increment Button -->
-                                            <button type="button" class="btn btn-outline-secondary" id="incrementBtn_{{ item.item_id }}">
-                                                <i class="fas fa-plus"></i>
-                                            </button>
-                                            {% if item.product.has_sizes %}
-                                                <input type="hidden" name="product_size" value="{{ item.size }}">
-                                            {% endif %}
-                                        </div>
+                            <form method="POST" class="quantity-form" action="{% url 'update_bag_item' item.item_id %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-outline-secondary" id="decrementBtn_{{ item.item_id }}">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input type="number" id="quantity_{{ item.item_id }}" name="quantity" class="form-control custom-input" value="{{ item.quantity }}" min="1" max="99">
+                                        <button type="button" class="btn btn-outline-secondary" id="incrementBtn_{{ item.item_id }}">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        {% if item.product.has_sizes %}
+                                            <input type="hidden" name="product_size" value="{{ item.size }}">
+                                        {% endif %}
                                     </div>
-                                    <button type="submit" class="btn btn-outline-secondary mt-3">Update</button>
-                                </form>
-                                <form method="POST" action="{% url 'remove_from_bag' item.item_id %}">
-                                    {% csrf_token %}
-                                    {% if item.product.has_sizes %}
-                                        <input type="hidden" name="product_size" value="{{ item.size }}">
-                                    {% endif %}
-                                    <button type="submit" class="btn btn-outline-secondary mt-3">Remove</button>
-                                </form>
-                            </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-secondary mt-3">Update</button>
+                            </form>
                         </td>
-
-                        <!-- Price -->
                         <td>${{ item.product.price }}</td>
-
-                        <!-- Total -->
                         <td>${{ item.product.price | calc_subtotal:item.quantity }}</td>
+                        <td>
+                            <form method="POST" action="{% url 'remove_from_bag' item.item_id %}">
+                                {% csrf_token %}
+                                {% if item.product.has_sizes %}
+                                    <input type="hidden" name="product_size" value="{{ item.size }}">
+                                {% endif %}
+                                <button type="submit" class="btn btn-outline-secondary">Remove</button>
+                            </form>
+                        </td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
