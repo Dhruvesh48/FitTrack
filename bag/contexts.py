@@ -2,15 +2,15 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
-from plan.models import Plan  # Import Plan model
+from plan.models import Plan
 
 def bag_contents(request):
     bag_items = []
-    total = Decimal(0)  # Initialize total as a Decimal
+    total = Decimal(0)
     product_count = 0
+    plan_count = 0
     bag = request.session.get('bag', {'products': {}, 'plans': {}})
 
-    # Handle products
     for item_id, item_data in bag.get('products', {}).items():
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
@@ -33,10 +33,9 @@ def bag_contents(request):
                     'size': size,
                 })
 
-    # Handle plans
     for item_id, plan_data in bag.get('plans', {}).items():
-        # Convert plan price to Decimal before adding it to total
         total += Decimal(plan_data['price'])
+        plan_count += 1
         bag_items.append({
             'item_id': item_id,
             'plan': True,
@@ -44,7 +43,6 @@ def bag_contents(request):
             'price': plan_data['price'],
         })
 
-    # Calculate delivery and grand total
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
@@ -54,10 +52,14 @@ def bag_contents(request):
 
     grand_total = delivery + total
 
+    total_item_count = product_count + plan_count
+
     context = {
         'bag_items': bag_items,
         'total': total,
         'product_count': product_count,
+        'plan_count': plan_count,
+        'total_item_count': total_item_count,
         'delivery': delivery,
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
