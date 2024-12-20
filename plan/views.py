@@ -17,8 +17,13 @@ def exercise_plan_list(request):
 
     if user_subscription:
         exercise_plans = ExercisePlan.objects.all()
+        if user_subscription.plan.duration == 'monthly':
+            max_plans = 4
+        else:
+            max_plans = 1
         context = {
             'exercise_plans': exercise_plans,
+            'max_plans': max_plans,
         }
         return render(request, 'plan/exercise_plan_list.html', context)
     else:
