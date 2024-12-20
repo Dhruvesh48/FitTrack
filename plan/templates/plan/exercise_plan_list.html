@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'plan/css/plan.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Your Exercise Plans</h1>
+
+    {% if exercise_plans %}
+        <div class="row">
+            {% for plan in exercise_plans %}
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card custom-card shadow-sm border-light">
+                        <div class="card-header">
+                            <h5 class="card-title text-center">{{ plan.title }}</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text" id="description{{ plan.id }}">
+                                <span class="short-description">
+                                    {{ plan.description|truncatewords:30 }}
+                                    {% if plan.description|length > 30 %}...
+                                    {% endif %}
+                                </span>
+
+                                <!-- Full description hidden initially -->
+                                <span class="full-description d-none">
+                                    {{ plan.description }}
+                                </span>
+                            </p>
+                            
+                            <!-- Learn More / Show Less Button -->
+                            <button class="btn btn-link text-decoration-none toggle-description" 
+                                    data-plan-id="{{ plan.id }}">
+                                Learn More
+                            </button>
+
+                            <a href="{{ plan.file.url }}" class="btn btn-outline-secondary btn-block mt-2" download>
+                                Download Plan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-center">You don't have any exercise plans available.</p>
+        <div class="text-center mt-4">
+            <a href="{% url 'plan_list' %}" class="btn btn-outline-secondary">
+                Get Plans
+            </a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+    $(document).ready(function() {
+        $('.toggle-description').click(function() {
+            var planId = $(this).data('plan-id');
+            
+            var shortDescription = $('#description' + planId + ' .short-description');
+            var fullDescription = $('#description' + planId + ' .full-description');
+            
+            shortDescription.toggleClass('d-none');
+            fullDescription.toggleClass('d-none');
+
+            var button = $(this);
+            if (fullDescription.hasClass('d-none')) {
+                button.text('Learn More');
+            } else {
+                button.text('Learn Less');
+            }
+        });
+    });
+</script>
+{% endblock %}

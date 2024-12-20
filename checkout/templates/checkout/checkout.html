@@ -41,9 +41,9 @@
                                     <p class="my-0">
                                         <strong>
                                             {% if item.product %}
-                                                {{ item.product.name }}  <!-- Display product name -->
+                                                {{ item.product.name }} 
                                             {% else %}
-                                                {{ item.name }}  <!-- Display plan name if it's a plan -->
+                                                {{ item.name }}
                                             {% endif %}
                                         </strong>
                                     </p>
@@ -65,9 +65,9 @@
                                 <p class="my-0 small">
                                     <strong>
                                         {% if item.product %}
-                                            ${{ item.product.price | calc_subtotal:item.quantity }}  <!-- Subtotal for products -->
+                                            ${{ item.product.price | calc_subtotal:item.quantity }}
                                         {% else %}
-                                            ${{ item.price }}  <!-- Price for plans (no quantity) -->
+                                            ${{ item.price }}
                                         {% endif %}
                                     </strong>
                                 </p>
