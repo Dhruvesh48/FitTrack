@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Community</h1>
+
+    <!-- Categories Section (Optional) -->
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <div class="btn-group" role="group" aria-label="Category filters">
+                {% for category in categories %}
+                    <a href="#" class="btn btn-outline-secondary">
+                        {{ category.name }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid my-5">
+
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-12 mb-4">  <!-- Full-width column -->
+            <div class="card custom-card shadow-sm border-light h-100">
+                <div class="card-header">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p><small>by {{ post.author.username }} on {{ post.created_at }}</small></p>
+                </div>
+                <div class="card-body">
+                    <p>{{ post.content|safe }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
