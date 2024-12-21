@@ -27,6 +27,23 @@
                     <p><strong>{{ comment.author.username }}</strong>:</p>
                     <p>{{ comment.content }}</p>
                     <p class="text-muted"><small>{{ comment.created_at }}</small></p>
+
+                    {% if request.user == comment.author %}
+                    <!-- Edit Comment Form -->
+                    <form method="post" class="d-inline">
+                        {% csrf_token %}
+                        <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                        <textarea name="content" class="form-control mb-2">{{ comment.content }}</textarea>
+                        <button type="submit" name="edit_comment" class="btn btn-sm btn-outline-primary">update</button>
+                    </form>
+
+                    <!-- Delete Comment Form -->
+                    <form method="post" class="d-inline">
+                        {% csrf_token %}
+                        <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                        <button type="submit" name="delete_comment" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                    {% endif %}
                 </div>
             </div>
             {% empty %}
@@ -41,10 +58,12 @@
             <form method="post">
                 {% csrf_token %}
                 {{ comment_form|crispy }}
-                <button type="submit" class="btn btn-outline-secondary">Submit</button>
+                <button type="submit" name="add_comment" class="btn btn-outline-secondary">Submit</button>
             </form>
         </div>
     </div>
 </div>
+
+
 
 {% endblock %}
