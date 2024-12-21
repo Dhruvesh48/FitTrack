@@ -38,3 +38,27 @@
     font-size: 0.9rem;
     color: #666666;
 }
+
+/* whislist */
+.product-image {
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: cover;
+}
+
+.d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.product-info {
+    margin-left: 15px;
+}
+
+.product-link {
+    text-decoration: none;
+}
+
+.product-link:hover {
+    text-decoration: underline;
+}

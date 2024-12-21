@@ -30,6 +30,18 @@
                 <p><strong>Rating:</strong> Not Rated</p>
             {% endif %}
             
+            <!-- Wishlist Button -->
+            <form method="POST" action="{% url 'add_to_wishlist' product.id %}" class="mb-3">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-secondary">
+                    {% if is_in_wishlist %}
+                        <i class="fas fa-heart text-white"></i> Wishlisted
+                    {% else %}
+                        <i class="far fa-heart"></i> Add to Wishlist
+                    {% endif %}
+                </button>
+            </form>
+            
             <!-- Add to Bag Form -->
             <form method="POST" action="{% url 'add_to_bag' product.id 'product' %}">
                 {% csrf_token %}
@@ -76,6 +88,7 @@
         </div>
     </div>
 </section>
+
 {% endblock %}
 
 {% block postloadjs %}
