@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">{{ post.title }}</h1>
+
+    <!-- Post Details -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <p><small>Category: <a href="?category={{ post.category.id }}" class="text-primary">{{ post.category.name }}</a></small></p>
+            <p><small>by {{ post.author.username }} on {{ post.created_at }}</small></p>
+            <hr>
+            <div>
+                {{ post.content|safe }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

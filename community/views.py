@@ -17,3 +17,11 @@ def community_list(request):
         'posts': posts,
     }
     return render(request, 'community/community_list.html', context)
+
+def post_detail(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    
+    context = {
+        'post': post,
+    }
+    return render(request, 'community/post_detail.html', context)
