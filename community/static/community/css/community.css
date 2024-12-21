@@ -1,0 +1,35 @@
+.card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for the card */
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.card-body {
+    padding: 20px;
+    font-size: 1.1rem;
+}
+
+.card-body p {
+    line-height: 1.6;
+}
+
+a.text-primary {
+    text-decoration: none; /* Remove underline */
+}
+
+a.text-primary:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+@media (max-width: 768px) {
+    .card-body {
+        padding: 15px;
+    }
+}

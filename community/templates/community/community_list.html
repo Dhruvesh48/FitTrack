@@ -1,32 +1,48 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'community/css/community.css' %}">
+{% endblock %}
 
 {% block content %}
 <div class="container my-5">
     <h1 class="text-center mb-4">Community</h1>
 
-    <!-- Categories Section (Optional) -->
+    <!-- Categories Section -->
     <div class="row mb-4">
         <div class="col-12 text-center">
-            <div class="btn-group" role="group" aria-label="Category filters">
-                {% for category in categories %}
-                    <a href="#" class="btn btn-outline-secondary">
-                        {{ category.name }}
-                    </a>
-                {% endfor %}
+            <!-- Dropdown Button -->
+            <div class="dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="categoryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Category
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                    {% for category in categories %}
+                        <li>
+                            <a class="dropdown-item" href="?category={{ category.id }}">
+                                {{ category.name }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>
 </div>
-<div class="container-fluid my-5">
 
+
+
+
+<div class="container-fluid my-5">
     <div class="row">
         {% for post in posts %}
         <div class="col-12 mb-4">  <!-- Full-width column -->
             <div class="card custom-card shadow-sm border-light h-100">
                 <div class="card-header">
                     <h5 class="card-title">{{ post.title }}</h5>
+                    <!-- Category as a clickable link with blue color -->
+                    <p><small><a href="#" class="text-primary">{{ post.category.name }}</a></small></p>
                     <p><small>by {{ post.author.username }} on {{ post.created_at }}</small></p>
                 </div>
                 <div class="card-body">
@@ -37,5 +53,6 @@
         {% endfor %}
     </div>
 </div>
+
 
 {% endblock %}

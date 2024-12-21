@@ -4,7 +4,13 @@ from .models import Post, Category
 # Create your views here.
 def community_list(request):
     categories = Category.objects.all()
-    posts = Post.objects.all()
+
+    category_id = request.GET.get('category', None)
+    
+    if category_id:
+        posts = Post.objects.filter(category__id=category_id)
+    else:
+        posts = Post.objects.all()
 
     context = {
         'categories': categories,
