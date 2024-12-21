@@ -63,7 +63,7 @@
     
                     {% if user and user.is_authenticated %}
                         <li class="nav-item {% if request.path == '/profile/' %}active{% endif %}">
-                            <a class="nav-link" href="#">Profile</a>
+                            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>

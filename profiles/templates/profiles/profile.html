@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Profile</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-sm-10 col-12">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Welcome to your profile</h2>
+                    <p class="card-text text-center">Manage your information and view your subscriptions here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
