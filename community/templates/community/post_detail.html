@@ -1,19 +1,50 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="container my-5">
-    <h1 class="text-center mb-4">{{ post.title }}</h1>
-
-    <!-- Post Details -->
-    <div class="card shadow-sm mb-4">
-        <div class="card-body">
-            <p><small>Category: <a href="?category={{ post.category.id }}" class="text-primary">{{ post.category.name }}</a></small></p>
-            <p><small>by {{ post.author.username }} on {{ post.created_at }}</small></p>
-            <hr>
-            <div>
-                {{ post.content|safe }}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{ post.title }}</h2>
+                    <p><small>by {{ post.author.username }} on {{ post.created_at }}</small></p>
+                </div>
+                <div class="card-body">
+                    <p>{{ post.content|safe }}</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <h4>Comments</h4>
+
+            {% for comment in comments %}
+            <div class="card my-2">
+                <div class="card-body">
+                    <p><strong>{{ comment.author.username }}</strong>:</p>
+                    <p>{{ comment.content }}</p>
+                    <p class="text-muted"><small>{{ comment.created_at }}</small></p>
+                </div>
+            </div>
+            {% empty %}
+            <p>No comments yet. Be the first to comment!</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <h5>Add a Comment</h5>
+            <form method="post">
+                {% csrf_token %}
+                {{ comment_form|crispy }}
+                <button type="submit" class="btn btn-outline-secondary">Submit</button>
+            </form>
+        </div>
+    </div>
 </div>
+
 {% endblock %}

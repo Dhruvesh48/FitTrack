@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Post, Category
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Post, Category, Comment
+from .forms import CommentForm
 
 # Create your views here.
 def community_list(request):
@@ -20,8 +21,21 @@ def community_list(request):
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
-    
+    comments = post.comments.all()
+    comment_form = CommentForm()
+
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.author = request.user
+            comment.save()
+            return redirect('post_detail', post_id=post.id)
+
     context = {
         'post': post,
+        'comments': comments,
+        'comment_form': comment_form,
     }
     return render(request, 'community/post_detail.html', context)
