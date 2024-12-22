@@ -1,45 +1,46 @@
 {% extends "account/base_entrance.html" %}
-{% load allauth i18n %}
+{% load allauth i18n crispy_forms_tags %}
+
 {% block head_title %}
-    {% trans "Signup" %}
+    {% trans "Sign Up" %}
 {% endblock head_title %}
-{% block content %}
-    {% element h1 %}
-        {% trans "Sign Up" %}
-    {% endelement %}
-    {% setvar link %}
-        <a href="{{ login_url }}">
-        {% endsetvar %}
-        {% setvar end_link %}
-        </a>
-    {% endsetvar %}
-    {% element p %}
-        {% blocktranslate %}Already have an account? Then please {{ link }}sign in{{ end_link }}.{% endblocktranslate %}
-    {% endelement %}
-    {% if not SOCIALACCOUNT_ONLY %}
-        {% url 'account_signup' as action_url %}
-        {% element form form=form method="post" action=action_url tags="entrance,signup" %}
-            {% slot body %}
-                {% csrf_token %}
-                {% element fields form=form unlabeled=True %}
-                {% endelement %}
-                {{ redirect_field }}
-            {% endslot %}
-            {% slot actions %}
-                {% element button tags="prominent,signup" type="submit" %}
-                    {% trans "Sign Up" %}
-                {% endelement %}
-            {% endslot %}
-        {% endelement %}
-    {% endif %}
-    {% if PASSKEY_SIGNUP_ENABLED %}
-        {% element hr %}
-        {% endelement %}
-        {% element button href=signup_by_passkey_url tags="prominent,signup,outline,primary" %}
+
+{% block inner_content %}
+<div class="text-center mb-4">
+    <h1 class="h3">{% trans "Sign Up" %}</h1>
+</div>
+
+<p class="text-center">
+    {% blocktranslate %}Already have an account? Then please 
+    <a href="{{ login_url }}">sign in</a>.{% endblocktranslate %}
+</p>
+
+{% if not SOCIALACCOUNT_ONLY %}
+    {% url 'account_signup' as action_url %}
+    <form method="post" action="{{ action_url }}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {{ redirect_field }}
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-outline-secondary btn-block">
+                {% trans "Sign Up" %}
+            </button>
+        </div>
+    </form>
+{% endif %}
+
+{% if PASSKEY_SIGNUP_ENABLED %}
+    <hr>
+    <div class="text-center mt-3">
+        <a href="{{ signup_by_passkey_url }}" class="btn btn-outline-primary btn-block">
             {% trans "Sign up using a passkey" %}
-        {% endelement %}
-    {% endif %}
-    {% if SOCIALACCOUNT_ENABLED %}
-        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-    {% endif %}
-{% endblock content %}
+        </a>
+    </div>
+{% endif %}
+
+{% if SOCIALACCOUNT_ENABLED %}
+    <hr>
+    {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+{% endif %}
+{% endblock inner_content %}
