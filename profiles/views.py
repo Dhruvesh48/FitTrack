@@ -1,8 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import UserProfileForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def profile(request):
-    """ Display the user's profile. """
+    """
+    View for displaying and updating the user's profile.
+    """
+    user_profile = request.user.userprofile
 
-    context = {}
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = UserProfileForm(instance=user_profile)
 
-    return render(request, 'profiles/profile.html', context)
+    return render(request, 'profiles/profile.html', {'form': form})
