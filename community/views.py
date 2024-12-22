@@ -51,15 +51,21 @@ def post_detail(request, post_id):
         elif 'delete_comment' in request.POST:
             # Handle deleting a comment
             comment_id = request.POST.get('comment_id')
-            comment = get_object_or_404(Comment, id=comment_id, author=request.user)
-            comment.delete()
-            messages.success(request, "Your comment has been deleted.")
+            comment = get_object_or_404(Comment, id=comment_id)
+            
+            if comment.author == request.user or request.user.is_superuser:
+                comment.delete()
+                messages.success(request, "The comment has been deleted.")
+            else:
+                messages.error(request, "You do not have permission to delete this comment.")
+            
             return redirect('post_detail', post_id=post.id)
 
     context = {
         'post': post,
         'comments': comments,
         'comment_form': comment_form,
+        'on_community_page': True
     }
     return render(request, 'community/post_detail.html', context)
 

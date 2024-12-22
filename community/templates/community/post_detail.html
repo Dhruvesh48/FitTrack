@@ -28,7 +28,7 @@
                     <p>{{ comment.content }}</p>
                     <p class="text-muted"><small>{{ comment.created_at }}</small></p>
 
-                    {% if request.user == comment.author %}
+                    {% if request.user == comment.author%}
                     <!-- Edit Comment Form -->
                     <form method="post" class="d-inline">
                         {% csrf_token %}
@@ -36,7 +36,8 @@
                         <textarea name="content" class="form-control mb-2">{{ comment.content }}</textarea>
                         <button type="submit" name="edit_comment" class="btn btn-sm btn-outline-primary">update</button>
                     </form>
-
+                    {% endif %}
+                    {% if request.user == comment.author or request.user.is_superuser %}
                     <!-- Delete Comment Form -->
                     <form method="post" class="d-inline">
                         {% csrf_token %}
