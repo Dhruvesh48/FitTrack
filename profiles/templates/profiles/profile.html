@@ -7,28 +7,78 @@
 
 {% block content %}
 <div class="container mt-5">
-    <!-- Page Header Outside of Card -->
-    <h1 class="mb-4 text-center">Profile</h1> <!-- Page title here -->
+    <div class="page-header">
+        <h1 class="display-5">Profile</h1>
+    </div>
 
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card shadow">
+            <div class="card shadow mb-4">
                 <div class="card-body">
-                    <h2 class="h4 mb-4 text-center">Update Your Profile</h2>
-
-                    <form method="post">
+                    <h2 class="h4 mb-4">Update Your Profile</h2>
+        
+                    <form method="post" id="profile-update-form">
                         {% csrf_token %}
-                        <!-- Use crispy filter to render the form -->
                         {{ form|crispy }}
-
                         <button type="submit" class="btn btn-outline-secondary btn-block">
                             Save Changes
                         </button>
                     </form>
                 </div>
             </div>
+
+            <!-- Order History Section -->
+            <div class="card shadow">
+                <div class="card-header">
+                    <h2 class="h4 mb-0">Order History</h2>
+                </div>
+                <div class="card-body">
+                    {% if orders %}
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Order Number</th>
+                                    <th>Date</th>
+                                    <th>Items</th>
+                                    <th>Order Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                    <tr>
+                                        <td><a href="{% url 'order_history' order.order_number %}"
+                                            title="{{ order.order_number }}">
+                                                {{ order.order_number|truncatechars:6 }}
+                                            </a></td>
+                                        <td>{{ order.date|date:"Y-m-d" }}</td>
+                                        <td>
+                                            <ul class="list-unstyled">
+                                                {% for item in order.lineitems.all %}
+                                                    <li class="small">
+                                                        {% if item.product.has_sizes %}
+                                                            Size {{ item.product.size|upper }}
+                                                        {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                        <td>${{ order.grand_total }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p>You have no orders yet.</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'profiles/js/inputfield.js' %}"></script>
 
 {% endblock %}

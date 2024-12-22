@@ -17,9 +17,6 @@ class UserProfileForm(forms.ModelForm):
             'default_street_address2',
             'default_county'
         ]
-        widgets = {
-            'default_country': CountrySelectWidget(attrs={'class': 'form-control stripe-style-input'}),
-        }
 
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
