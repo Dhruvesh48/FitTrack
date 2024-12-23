@@ -55,10 +55,28 @@
     margin-left: 15px;
 }
 
-.product-link {
-    text-decoration: none;
+.text-black-custom {
+    color: black;
 }
 
-.product-link:hover {
+a.text-black-custom{
+    text-decoration: none; /* Remove underline */
+}
+
+a.text-black-custom:hover{
     text-decoration: underline;
+    color: #333333;
+}
+
+.product-name {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 576px) {
+    .product-name {
+        max-width: 150px;
+    }
 }

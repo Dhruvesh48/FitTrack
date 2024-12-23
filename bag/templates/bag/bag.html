@@ -21,11 +21,11 @@
                 <thead>
                     <tr>
                         <th>Image</th>
-                        <th>Item</th>
-                        <th>Size</th>
+                        <th data-label="Item:">Item</th>
+                        <th data-label="Size:">Size</th>
                         <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total</th>
+                        <th data-label="Price:">Price</th>
+                        <th data-label="Total">Total</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -56,8 +56,8 @@
                                 <img src="{{ MEDIA_URL }}noimage.png" alt="No Image" class="img-thumbnail product-image">
                             {% endif %}
                         </td>
-                        <td class="text-truncate">{{ item.product.name }}</td>
-                        <td>
+                        <td data-label="Item:" class="text-truncate spacing">{{ item.product.name }}</td>
+                        <td data-label="Size:" class="spacing">
                             {% if item.product.has_sizes %}
                                 {{ item.size|upper }}
                             {% else %}
@@ -84,8 +84,8 @@
                                 <button type="submit" class="btn btn-outline-secondary mt-3">Update</button>
                             </form>
                         </td>
-                        <td>${{ item.product.price }}</td>
-                        <td>${{ item.product.price | calc_subtotal:item.quantity }}</td>
+                        <td data-label="Price:" class="spacing">${{ item.product.price }}</td>
+                        <td data-label="Total:" class="spacing">${{ item.product.price | calc_subtotal:item.quantity }}</td>
                         <td>
                             <form method="POST" action="{% url 'remove_from_bag' item.item_id %}">
                                 {% csrf_token %}
@@ -120,10 +120,11 @@
         </div>
 
         <!-- Actions -->
-        <div class="mt-3 d-flex justify-content-between">
-            <a href="{% url 'product_page' %}" class="btn btn-outline-secondary">Continue Shopping</a>
+        <div class="mt-3 d-flex flex-column flex-sm-row justify-content-between">
+            <a href="{% url 'product_page' %}" class="btn btn-outline-secondary mb-2 mb-sm-0">Continue Shopping</a>
             <a href="{% url 'checkout' %}" class="btn btn-outline-secondary">Proceed to Checkout</a>
         </div>
+        
     {% endif %}
 </section>
 {% endblock %}

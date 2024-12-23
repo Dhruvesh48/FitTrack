@@ -37,7 +37,7 @@
             <div class="card custom-card shadow-sm border-light h-100">
                 <div class="card-header">
                     <h5 class="card-title">
-                        <a href="{% url 'post_detail' post.id %}" class="text-dark text-decoration-none">
+                        <a href="{% url 'post_detail' post.id %}" class="text-dark">
                             {{ post.title }}
                         </a>
                     </h5>
@@ -52,6 +52,4 @@
         {% endfor %}
     </div>
 </div>
-
-
 {% endblock %}
