@@ -34,44 +34,60 @@
                 </div>
                 <div class="card-body">
                     {% if orders %}
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Order Number</th>
-                                    <th>Date</th>
-                                    <th>Items</th>
-                                    <th>Order Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for order in orders %}
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
                                     <tr>
-                                        <td><a href="{% url 'order_history' order.order_number %}"
-                                            title="{{ order.order_number }}">
-                                                {{ order.order_number|truncatechars:6 }}
-                                            </a></td>
-                                        <td>{{ order.date|date:"Y-m-d" }}</td>
-                                        <td>
-                                            <ul class="list-unstyled">
-                                                {% for item in order.lineitems.all %}
-                                                    <li class="small">
-                                                        {% if item.product.has_sizes %}
-                                                            Size {{ item.product.size|upper }}
-                                                        {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </td>
-                                        <td>${{ order.grand_total }}</td>
+                                        <th>Order Number</th>
+                                        <th>Date</th>
+                                        <th>Items</th>
+                                        <th>Order Total</th>
                                     </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {% for order in orders %}
+                                        <tr>
+                                            <!-- Order Number -->
+                                            <td>
+                                                <a href="{% url 'order_history' order.order_number %}" 
+                                                   title="{{ order.order_number }}">
+                                                    {{ order.order_number|truncatechars:6 }}
+                                                </a>
+                                            </td>
+                                            
+                                            <!-- Date -->
+                                            <td>
+                                                {{ order.date|date:"Y-m-d" }}
+                                            </td>
+                                            
+                                            <!-- Items -->
+                                            <td>
+                                                <ul class="list-unstyled mb-0">
+                                                    {% for item in order.lineitems.all %}
+                                                        <li class="small text-truncate">
+                                                            {% if item.product.has_sizes %}
+                                                                <span class="text-muted">Size {{ item.product.size|upper }}: </span>
+                                                            {% endif %}
+                                                            <span class="text-sm">{{ item.product.name }}</span> x{{ item.quantity }}
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </td>
+                                            
+                                            <!-- Order Total -->
+                                            <td>
+                                                ${{ order.grand_total }}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
                     {% else %}
                         <p>You have no orders yet.</p>
                     {% endif %}
                 </div>
-            </div>
+            </div>           
         </div>
     </div>
 </div>

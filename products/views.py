@@ -42,6 +42,7 @@ def product_detail(request, pk):
     context = {
         'product': product,
         'is_in_wishlist': is_in_wishlist,
+        
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -68,6 +69,8 @@ def remove_from_wishlist(request, product_id):
 
     product = get_object_or_404(Product, id=product_id)
     Wishlist.objects.filter(user=request.user, product=product).delete()
+    messages.success(request, f"Removed {product.name} from your wishlist.")
+    
     return redirect('wishlist_view')
 
 @login_required

@@ -83,10 +83,15 @@ html, body{
 .message-container {
     position: fixed;
     top: 72px;
-    right: 15px;
+    right: 10px;
     z-index: 99999999999;
+    max-width: calc(100% - 20px);
+    width: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
 }
-
 .custom-toast {
     overflow: visible;
 }
@@ -139,3 +144,4 @@ html, body{
 .arrow-dark {
     border-bottom-color: #343a40 !important;
 }
+
