@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Post, Category, Comment
 from .forms import CommentForm
+
 # Create your views here.
 def community_list(request):
     categories = Category.objects.all()

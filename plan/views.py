@@ -1,6 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import Plan, UserSubscription, ExercisePlan
-from django.contrib import messages
 
 # Create your views here.
 def plan_list(request):
@@ -25,11 +24,11 @@ def exercise_plan_list(request):
             'exercise_plans': exercise_plans,
             'max_plans': max_plans,
         }
-        return render(request, 'plan/exercise_plan_list.html', context)
     else:
-        plans = Plan.objects.all()
+        exercise_plans = ExercisePlan.objects.all()
         context = {
-            'plans': plans,
+            'exercise_plans': exercise_plans,
             'has_subscription': False,
+            'max_plans': 0,
         }
-        return render(request, 'plan/exercise_plan_list.html', context)
+    return render(request, 'plan/exercise_plan_list.html', context)

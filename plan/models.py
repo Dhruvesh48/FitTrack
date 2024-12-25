@@ -43,6 +43,9 @@ class UserSubscription(models.Model):
 
     def save(self, *args, **kwargs):
         """Automatically calculate the end date based on the plan's duration."""
+        if not self.start_date:
+            self.start_date = timezone.now()
+        
         if not self.end_date:
             duration_days = self.plan.get_duration_in_days()
             self.end_date = self.start_date + timedelta(days=duration_days)
