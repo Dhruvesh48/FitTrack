@@ -25,19 +25,16 @@
                                     {% endif %}
                                 </span>
 
-                                <!-- Full description hidden initially -->
                                 <span class="full-description d-none">
                                     {{ plan.description }}
                                 </span>
                             </p>
                             
-                            <!-- Learn More / Show Less Button -->
                             <button class="btn btn-link text-decoration-none toggle-description" 
                                     data-plan-id="{{ plan.id }}">
                                 Learn More
                             </button>
 
-                            <!-- If the user can download this plan, display the download button -->
                             {% if forloop.counter <= max_plans %}
                                 <a href="{{ plan.file.url }}" class="btn btn-outline-secondary btn-block mt-2" download>
                                     Download Plan

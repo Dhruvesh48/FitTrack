@@ -4,7 +4,6 @@
 {% block content %}
 <section class="container py-5">
     <div class="row">
-        <!-- Product Image Section -->
         <div class="col-md-6">
             {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
@@ -17,7 +16,6 @@
             {% endif %}
         </div>
 
-        <!-- Product Details Section -->
         <div class="col-md-6">
             <h2>{{ product.name }}</h2>
             <small class="muted">{{ product.sku }}</small>
@@ -30,7 +28,6 @@
                 <p><strong>Rating:</strong> Not Rated</p>
             {% endif %}
             
-            <!-- Wishlist Button -->
             <form method="POST" action="{% url 'add_to_wishlist' product.id %}" class="mb-3">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-outline-secondary">
@@ -42,7 +39,6 @@
                 </button>
             </form>
             
-            <!-- Add to Bag Form -->
             <form method="POST" action="{% url 'add_to_bag' product.id 'product' %}">
                 {% csrf_token %}
                 {% if product.has_sizes %}
@@ -58,25 +54,20 @@
                     </div>
                 {% endif %}
                 
-                <!-- Quantity Selector -->
                 <div class="form-group">
                     <div class="input-group">
-                        <!-- Decrement Button -->
                         <button type="button" class="btn btn-outline-secondary" id="decrementBtn_{{ product.id }}">
                             <i class="fas fa-minus"></i>
                         </button>
                         
-                        <!-- Quantity Input -->
                         <input type="number" id="quantity_{{ product.id }}" name="quantity" class="form-control custom-input" value="1" min="1" max="99">
                         
-                        <!-- Increment Button -->
                         <button type="button" class="btn btn-outline-secondary" id="incrementBtn_{{ product.id }}">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
                 </div>
                 
-                <!-- Action Buttons -->
                 <div class="d-flex justify-content-between">
                     <a href="{% url 'product_page' %}" class="btn btn-outline-secondary">
                         <i class="fa-solid fa-angle-left"></i> Keep Shopping

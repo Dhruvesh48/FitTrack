@@ -21,7 +21,6 @@ class UserProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
 
-        # Define placeholders
         placeholders = {
             'default_phone_number': 'Phone Number',
             'default_country': 'Country',

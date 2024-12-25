@@ -4,7 +4,6 @@ from django.contrib import messages
 from .models import Post, Category, Comment
 from .forms import CommentForm
 
-# Create your views here.
 def community_list(request):
     categories = Category.objects.all()
 
@@ -29,7 +28,6 @@ def post_detail(request, post_id):
 
     if request.method == "POST":
         if 'add_comment' in request.POST:
-            # Handle adding a comment
             comment_form = CommentForm(request.POST)
             if comment_form.is_valid():
                 comment = comment_form.save(commit=False)
@@ -40,7 +38,6 @@ def post_detail(request, post_id):
                 return redirect('post_detail', post_id=post.id)
 
         elif 'edit_comment' in request.POST:
-            # Handle editing a comment
             comment_id = request.POST.get('comment_id')
             comment = get_object_or_404(Comment, id=comment_id, author=request.user)
             edit_form = CommentForm(request.POST, instance=comment)
@@ -50,7 +47,6 @@ def post_detail(request, post_id):
                 return redirect('post_detail', post_id=post.id)
 
         elif 'delete_comment' in request.POST:
-            # Handle deleting a comment
             comment_id = request.POST.get('comment_id')
             comment = get_object_or_404(Comment, id=comment_id)
             

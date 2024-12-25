@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Elevate your fitness journey with FitTrack - personalized plans, vibrant community, and exclusive shop.">
-        <meta name="keywords" content="fitness, health, exercise, nutrition, community">
+        <meta name="keywords" content="fitness, health, exercise, nutrition, community, finess poducts">
 
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
@@ -19,6 +19,7 @@
     {% block corecss %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <!-- Mail chimp -->
         <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">
     {% endblock %}
@@ -52,13 +53,11 @@
                         <a class="nav-link" href="{% url 'community_list'  %}">Community</a>
                     </li>
     
-                    <!-- New Bag Link -->
                     {% if grand_total %}
                         <li class="nav-item {% if request.path == '/bag/' %}active{% endif %}">
                             <a class="nav-link position-relative" href="{% url 'view_bag' %}">
                                 <i class="fas fa-shopping-bag"></i> Bag
                                 {% if total_item_count > 0 %}
-                                    <!-- Red Notification Badge -->
                                     <span class="badge badge-pill badge-danger position-absolute">
                                         {{ total_item_count }}
                                     </span>
@@ -122,7 +121,7 @@
                    <div class="col-12 col-md-6">
                      <h3>Social</h3>
                      <p>Keep up to date with all our latest offers</p>
-                     <a href="#" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+                     <a href="https://www.facebook.com/profile.php?id=61571039735120" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
                    </div>
                    <div class="col-12 col-md-6">                        
                         <!-- Mailchimp signup form here -->
@@ -164,15 +163,11 @@
         <script src="https://kit.fontawesome.com/496853649b.js" crossorigin="anonymous"></script>
         <!--Stripe-->
         <script src="https://js.stripe.com/v3/"></script>
-
+        <!--Mail chimp-->
         <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
         
     {% endblock %}
-    {% block extra_js %}{% endblock %}
-    {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
-    </script>
+    {% block extra_js %}
     <script type="text/javascript">
         (function ($) { 
             window.fnames = new Array(); 
@@ -193,6 +188,11 @@
             ftypes[6] = 'text'; 
         }(jQuery)); 
         var $mcj = jQuery.noConflict(true);
+    </script>
+    {% endblock %}
+    {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
     </script>
     {% endblock %}
   </body>

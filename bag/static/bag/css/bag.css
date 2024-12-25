@@ -26,39 +26,35 @@
     height: auto;
 }
 
-/* Make the table responsive and switch to a vertical layout on small screens */
 @media (max-width: 480px) {
     .table, .table th, .table td {
         border: none;
     }
 
     thead {
-        display: none; /* Hide the table header */
+        display: none;
     }
 
-    /* Optional: Style the table rows to appear more like blocks on mobile */
     .table td {
         display: block;
         position: relative;
         text-align: left;
     }
 
-    /* Add labels for the mobile layout */
     .table td::before {
-        content: attr(data-label); /* Content of label will be added dynamically */
+        content: attr(data-label);
         position: absolute;
         left: 10px;
         top: 10px;
         font-weight: bold;
     }
 
-    /* Adjust the image for better display */
     .product-image {
         width: 500px;
         height: auto;
         margin-bottom: 10px;
     }
     .table td.spacing {
-        padding-left: 25%; /* Push content to the right */
+        padding-left: 25%;
     }
 }

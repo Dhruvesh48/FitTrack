@@ -19,7 +19,6 @@ class UserProfile(models.Model):
     default_street_address2 = models.CharField(max_length=80, null=True, blank=True)
     default_county = models.CharField(max_length=80, null=True, blank=True)
     
-    # Subscription plan details
     plan_start_date = models.DateTimeField(null=True, blank=True)
     plan_end_date = models.DateTimeField(null=True, blank=True)
     
@@ -31,7 +30,7 @@ class UserProfile(models.Model):
     plan_type = models.CharField(
         max_length=10,
         choices=PLAN_TYPE_CHOICES,
-        default='monthly',  # Default to monthly plan
+        default='monthly',
     )
 
     plan_status = models.CharField(
@@ -66,5 +65,4 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
     if created:
         UserProfile.objects.create(user=instance)
-    # Existing users: just save the profile
     instance.userprofile.save()

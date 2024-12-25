@@ -59,12 +59,10 @@ class StripeWH_Handler:
         shipping_details = intent.shipping
         grand_total = round(stripe_charge.amount / 100, 2)
 
-        # Clean data in the shipping details
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
 
-        # Update profile information if save_info was checked
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
@@ -126,7 +124,6 @@ class StripeWH_Handler:
                 )
                 bag_data = json.loads(bag)
 
-                # Handle products
                 for item_id, item_data in bag_data.get('products', {}).items():
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
@@ -145,8 +142,6 @@ class StripeWH_Handler:
                                 product_size=size,
                             )
                             order_line_item.save()
-
-                # Handle plans
                 for item_id, plan_data in bag_data.get('plans', {}).items():
                     plan = Plan.objects.get(id=item_id)
                     order_line_item = OrderLineItem(
@@ -155,7 +150,6 @@ class StripeWH_Handler:
                         quantity=1,
                     )
                     order_line_item.save()
-
             except Exception as e:
                 if order:
                     order.delete()
@@ -166,7 +160,6 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
-
 
     def handle_payment_intent_payment_failed(self, event):
         """

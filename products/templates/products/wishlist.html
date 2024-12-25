@@ -12,7 +12,6 @@
         {% for item in wishlist_items %}
         <li class="list-group-item">
             <div class="row align-items-center">
-                <!-- Product Image -->
                 <div class="col-4 col-sm-3 col-md-2 mb-3 mb-md-0">
                     <a href="{% url 'product_detail' item.product.id %}" class="product-link d-block">
                         {% if item.product.image %}
@@ -23,7 +22,6 @@
                     </a>
                 </div>
                 
-                <!-- Product Name, Rating, and Price -->
                 <div class="col-8 col-sm-6 col-md-8">
                     <a href="{% url 'product_detail' item.product.id %}" class="text-black-custom">
                         <strong class="d-block product-name">{{ item.product.name }}</strong>
@@ -38,7 +36,6 @@
                     <div><strong>${{ item.product.price }}</strong></div>
                 </div>
                 
-                <!-- Remove Button -->
                 <div class="col-12 col-sm-3 col-md-2 text-end">
                     <a href="{% url 'remove_from_wishlist' item.product.id %}" class="btn btn-danger btn-sm">
                         Remove
@@ -51,7 +48,6 @@
         {% endfor %}
     </ul>
 
-    <!-- Back to Shopping Button -->
     <div class="mt-4 text-center">
         <a href="{% url 'product_page' %}" class="btn btn-outline-secondary">
             <i class="fa-solid fa-chevron-left"></i> Back to Shopping

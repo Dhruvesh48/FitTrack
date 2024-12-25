@@ -14,10 +14,9 @@
                 <hr class="mt-1 mb-3">
             </div>
         </div>
-        {% if grand_total and not on_profile_page and not on_community_page and not on_whislist_page %}
+        {% if grand_total and not on_profile_page and not on_community_page %}
             <p class="logo-font bg-white text-black py-1">Your Bag ({{ total_item_count }})</p>
             <div class="bag-notification-wrapper">
-                <!-- Products -->
                 {% for item in bag_items %}
                     {% if item.product %}
                         <div class="row mb-2">
@@ -33,7 +32,6 @@
                     {% endif %}
                 {% endfor %}
 
-                <!-- Plans -->
                 {% for item in bag_items %}
                     {% if item.plan %}
                         <div class="row mb-2">
@@ -42,7 +40,7 @@
                             </div>
                             <div class="col-8 col-sm-9 col-md-10 col-lg-10">
                                 <p class="my-0"><strong>{{ item.name }}</strong></p>
-                                <p class="my-0 small text-muted">Qty: 1</p> <!-- Plans typically have quantity 1 -->
+                                <p class="my-0 small text-muted">Qty: 1</p>
                                 <p class="my-0 small text-muted">Price: ${{ item.price|floatformat:2 }}</p>
                             </div>
                         </div>

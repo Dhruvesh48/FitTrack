@@ -15,7 +15,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCategories">
                 <ul class="navbar-nav ml-auto">
-                    <!-- Dropdown for Sorting by Price or Rating -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarSorting" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sort By
@@ -28,7 +27,6 @@
                         </div>
                     </li>
     
-                    <!-- Categories Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarCategoriesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categories
@@ -41,7 +39,6 @@
                         </div>
                     </li>
     
-                    <!-- Wishlist Button -->
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'wishlist_view' %}">
                             <i class="fas fa-heart mr-1"></i> Wishlist
@@ -68,7 +65,6 @@
                         <p class="card-text">${{ product.price }}</p>
                         <p class="card-text">{{ product.description|truncatewords:15 }}</p>
                         
-                        <!-- Display Rating -->
                         {% if product.rating %}
                             <p class="card-text">
                                 <strong>Rating:</strong> {{ product.rating }} / 5

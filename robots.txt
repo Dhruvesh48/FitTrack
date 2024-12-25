@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /account/
+Disallow: /bag/
+Sitemap: https://fit-track-fitness-20c3b7848895.herokuapp.com/sitemap.xml

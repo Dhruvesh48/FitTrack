@@ -39,7 +39,6 @@ def checkout(request):
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
-        # Collect form data
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -60,7 +59,6 @@ def checkout(request):
             order.original_bag = json.dumps(bag)
             order.save()
 
-            # Handle products in the bag
             for item_id, item_data in bag.get('products', {}).items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -87,7 +85,6 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-            # Handle plans in the bag
             for item_id, item_data in bag.get('plans', {}).items():
                 try:
                     plan = Plan.objects.get(id=item_id)
@@ -109,7 +106,6 @@ def checkout(request):
                             'active': True,
                         }
                     )
-                    # Update or set the subscription end date
                     user_subscription.end_date = user_subscription.start_date + timedelta(days=duration_days)
                     user_subscription.active = True
                     user_subscription.save()
@@ -127,24 +123,21 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-            # Save user info to session if requested
             request.session['save_info'] = 'save-info' in request.POST
 
-            # Redirect to checkout success
             return redirect(reverse('checkout_success', args=[order.order_number]))
 
         else:
             messages.error(request, 'There was an error with your form. Please double-check your information.')
 
     else:
-        # Handle GET requests
         bag = request.session.get('bag', {})
         if not bag:
             return redirect(reverse('plan_list'))
 
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
-        stripe_total = round(total * 100)  # Convert to cents
+        stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
@@ -191,11 +184,9 @@ def checkout_success(request, order_number):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
 
-        # Save the user's info
         if save_info:
             profile_data = {
                 'default_phone_number': order.phone_number,

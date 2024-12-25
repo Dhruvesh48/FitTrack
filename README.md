@@ -28,6 +28,56 @@ All pages in the app include:
 - **Navbar**: A responsive navigation bar that collapses into a burger menu on mobile and tablet devices for easy access.
 - **Footer**: Contains links to the app’s social media accounts.
 
+---
+
+## Wireframes
+
+### 1. Homepage Wireframe
+This wireframe represents the layout for the homepage.
+![Homepage Wireframe](assets/images/index-html.png)
+
+### 2. Product Page Wireframe
+Here is the wireframe for the product page where users can browse and select products.
+![Product Page Wireframe](assets/images/product-page-html.png)
+
+### 3. Product detail Page Wireframe
+Here is the wireframe for the product detail page where users can select sizes and quantity of the products.
+![Product detail Page Wireframe](assets/images/product-detail-page.png)
+
+### 4. Community Page Wireframe
+The community page provides all the post from all the communities.
+![Community Page Wireframe](assets/images/community-html.png)
+
+### 5. Post detail Page Wireframe
+The post detail page provides a space for users to connect, share tips, and ask questions.
+![Product Detail Page Wireframe](assets/images/post-detail.png)
+
+### 6. Excercise Plan Page Wireframe
+The Excercise Plan page provides a description of all the plan and download option.
+![Excercise Plan Page Wireframe](assets/images/excercise-plan.png)
+
+### 7. Plan Page Wireframe
+The Plan Page provides a list of the plan avvailabe for user to choose and subscribe.
+![Plan Page Wireframe](assets/images/plan-html.png)
+
+### 8. Profile Page Wireframe
+The Profile Page provides a space for users update their details and have order history all purchases user has made.
+![Profile Page Wireframe](assets/images/profile-html.png)
+
+### 9. Bag Page Wireframe
+The Bag Page provides an overview of all the product/plan user want to purchase.
+![Bag Page Wireframe](assets/images/bag-html.png)
+
+### 10. Checkout Page Wireframe
+The Checkout Page provides all the billing and shipping details from user and make a safe transactions.
+![Checkout Page Wireframe](assets/images/checkout-html.png)
+
+### 11. Checkout Success Page Wireframe
+The Checkout Success Page provides order summary.
+![Checkout Success Page Wireframe](assets/images/checkout-success.png)
+
+---
+
 ### Page-Specific Features
 
 ## Home (Index) Page
@@ -113,13 +163,24 @@ The Product Page provides users with a comprehensive view of all available produ
 - **Visual Feedback**:
   - Highlighted images, clear buttons, and consistent text styles for better user interaction.
 
+### Known Issue
+
+- **Navbar Sorting**
+  - **Sort By**:
+      - Price: Low to High
+      - Price: High to Low
+      - Rating: High to Low
+      - Rating: Low to High 
+**Not working as expected**
+
 ### Future Features
 
+- Debug the known issue mention above.
 - Introduce user reviews and detailed ratings on the product cards.
 - Implement a "Quick Add to Bag" button directly on the product cards.
 - Add a search bar to enable direct searches by product name or category.
 - Introduce a product form to enable adding products to the product page.
-
+      
 ---
 
 ## Product Detail Page
@@ -170,18 +231,21 @@ The Product Detail Page provides an in-depth view of individual products, includ
 - **Accessible Forms**:
   - Forms are designed with CSRF protection and hidden redirect fields for secure and seamless processing.
 
+### Known Issue
+- Cannot choose the same product with different sizes
+
 ### Future Features
+
+- Debug the known issue mention above.
 - Add the ability to display customer reviews and ratings directly on the page.
 - Include a "related products" section to suggest similar or complementary products.
 - Enhance the wishlist button to show a success toast or notification upon adding/removing items.
 
 ---
 
-# Wishlist Page
+## Wishlist Page
 
 The **Wishlist Page** enables users to save their favorite products for later. This feature enhances the shopping experience and boosts user engagement.
-
----
 
 ## Features
 
@@ -218,15 +282,17 @@ The **Wishlist Page** enables users to save their favorite products for later. T
 - Custom CSS ensures the page aligns with the site's overall theme and design.
 - Consistent button and link styles maintain visual harmony.
 
----
+### Known Issue
+- When the product has been added/removed from the whislist view, instead of showing just the toast message it also shows the bag items(if the items are in the bag).  
 
-## Future Enhancements
+## Future Features
 
-**Bulk Management**: Add options to remove multiple items or clear the wishlist entirely.
-**Save for Later**: Allow users to move items between their wishlist and shopping bag.
-**Sharing Features**: Enable users to share their wishlist via email or social media.
-**Stock Alerts**: Notify users about price drops, sales, or stock changes for wishlist items.
-**Persistent Wishlist**: Save wishlist items to user profiles for logged-in users.
+- Debug the known issue mention above.
+- **Bulk Management**: Add options to remove multiple items or clear the wishlist entirely.
+- **Save for Later**: Allow users to move items between their wishlist and shopping bag.
+- **Sharing Features**: Enable users to share their wishlist via email or social media.
+- **Stock Alerts**: Notify users about price drops, sales, or stock changes for wishlist items.
+- **Persistent Wishlist**: Save wishlist items to user profiles for logged-in users.
 
 ---
 
@@ -415,7 +481,7 @@ The **Post Detail Page** allows users to view the full content of a post, includ
 
 ---
 
-# Profile Page
+## Profile Page
 
 The **Profile Page** allows users to view and update their profile information, as well as view their order history. This page is designed for a seamless user experience with a simple interface to update personal details and view past purchases.
 
@@ -619,3 +685,121 @@ The **Checkout Success Page** is displayed to the user after a successful order 
   - **Logout**: Safely ends the user session.
 
 ---
+
+## Marketing
+
+### Target Audience:
+  - Fitness Enthusiasts: People who are already into fitness and want personalized fitness plans.
+  - Beginners: People who want to start a fitness journey but are unsure where to begin.
+  - Busy Professionals: People looking for a convenient way to track fitness without spending too much time.
+  - Health-conscious Individuals: People focused on maintaining a healthy lifestyle.
+
+### Value Proposition & Key Features
+  - Personalized Fitness Plans: Tailored plans to fit individual needs based on goals, fitness level, and preferences.
+  - Community Engagement: Connect with like-minded individuals in the community to share tips, motivate each other, and celebrate milestones.
+  - User-Friendly Interface: Simple and intuitive design that makes tracking progress easy.
+  - Access Anytime, Anywhere: Users can access their plans and progress tracking wherever they are.
+
+### Content Marketing
+  - Fitness Blog: Start a blog about fitness, health, and wellness. Create articles that promote FitTrack by subtly introducing the app as a solution to common fitness challenges.
+  - Blog post ideas: "How to Stay Consistent with Your Fitness Goals," "Top 5 Apps Every Fitness Enthusiast Needs," and "How to Create a Personalized Workout Plan with FitTrack."
+  - Video Tutorials: Create YouTube or Instagram tutorials showing how FitTrack works. Include real-time examples of users signing up, selecting plans, and tracking progress.
+  - User Stories: Share real-life user success stories. People love seeing transformations, and showing how FitTrack helped someone achieve their fitness goals could encourage new users.
+
+### Referral Program
+  - Launch a referral program where existing users can get rewards for bringing in new users. For instance:
+    - Offer premium features for free for a limited time when someone signs up using a referral link.
+    - Give discounts on future plans or exclusive content.
+
+### Partnerships & Sponsorships
+  - Partner with gyms, fitness trainers, or health organizations to promote FitTrack. Offer gym members or clients free trials of FitTrack in exchange for promoting it.
+  - Sponsorship of fitness events: We can sponsor local or virtual fitness events (e.g., marathons, wellness workshops, fitness challenges) to get exposure and promote FitTrack.
+
+### Google Ads & SEO
+  - Google Ads: Use Google Ads to target people searching for fitness apps, workout plans, or fitness tracking tools.
+  - Keywords to target: fitness, health, exercise, nutrition, community, finess poducts
+  - Search Engine Optimization (SEO): Elevate your fitness journey with FitTrack - personalized plans, vibrant community, and exclusive shop.
+  - Sitemap.xml: Helps SEO to discover URLS, UPDATE CONTENT, improve USER EXPERIENCE
+  - Robot.txt: Help manage SEO crawls website
+
+### Social Media Business page 
+  - [Facebook pages](https://www.facebook.com/profile.php?id=61571039735120)
+  - ![Facebook Cover Page](assets/images/cover-page.jpeg)
+  - ![Facebook Cover and post page](assets/images/cover-and-post.jpeg)
+  - ![Facebook post page](assets/images/facebook-post.jpeg)
+  - ![Facebook Website url](assets/images/website-url.jpeg)
+
+### Newsletter Marketing with Mailchimp
+  - Mail Chimp newsletter
+  - ![Mail Chimp news letter Page](assets/images/mail-chimp.png)
+
+---
+
+## Manual Testing
+
+### Responsiveness
+
+Each page has been inspected on variety of devices such as mobile, laptop, desktop. Moreover, they have been tested on multiple browser such as Google, Microsoft edge.
+
+---
+
+## AUTOMATED TESTING
+- Each app have test views and test forms.
+
+---
+
+#### Frameworks, Libraries & Programs Used
+
+- [Favicon.io](https://favicon.io/) - To create and download the favicon logo.
+- [Flaticon](https://www.flaticon.com/) - To download the favicon png logo.
+- [Bootstrap 4](https://getbootstrap.com/) - To make templates responsive and add css.
+- [Google Dev tools](https://developer.chrome.com/docs/) - to troubleshoot and test issues during the development.
+- [MDN webdocs](https://developer.mozilla.org/en-US/) - reference
+- [W3C schools](https://www.w3schools.com/) - for resolving code format in CSS and HTML.
+- [Color Hunt](https://colorhunt.co/) - for choosing the color palettes.
+- [Pinterest](https://uk.pinterest.com/) - All products images.
+- [Mitsology](https://mitsology.com/debunking-common-myths-and-misconceptions-about-health-and-fitness/) - For Facebook cover page
+- [Stack Overflow](https://stackoverflow.com/) - For queries and trouble shooting
+- [Django](https://www.djangoproject.com/) - Documentation and trouble shooting
+- [Python](https://www.python.org/) - Documentation and trouble shooting
+- [Stripe](https://stripe.com/gb) - Payment intent
+- [Amazon AWS](https://aws.amazon.com/) - Online storage
+- [Font Awesome](https://fontawesome.com/) - Icons
+- [Figma](https://www.figma.com/) - Designing wireframe
+
+---
+
+## Deployment
+
+---
+ This site was deployed using the following steps:
+
+1. Open GitHub.
+2. Select the project to be deployed.
+3. Go to 'Settings'.
+4. In the Code and Automation section, select Pages.
+5. Set Source to 'Deploy from a branch'.
+6. Select Main Branch.
+7. Set Folder to 'Root'.
+8. Under Branch click 'Save'
+9. The link to the live website is now displayed at the top of the page.
+
+### Local development
+
+---
+
+#### How to Fork
+
+1. Log in to Github.
+2. Go to the repository for this project.
+3. At the top right of the page, click the "Fork" button. This will create a copy of the repository under your Github account.
+
+#### How to clone
+
+1. Log in to Github.
+2. Go to the repository for this project.
+3. Click on the "Code" button, select from HTTPS, SSH or Github CLI.
+4. Copy the URL for the repository.
+5. Open your terminal or command prompt.
+6. Navigate to the directory where you want to clone your repository.
+7. Use the `git clone` command followed by the URL that you have copied.
