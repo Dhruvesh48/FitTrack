@@ -5,10 +5,14 @@ html, body{
 }
 
 /* custom.css */
-.custom-navbar,
-.custom-footer {
+.custom-navbar{
     background-color: #333333;
     color: #ffffff;
+}
+
+.custom-footer{
+    background-color: #ffffff;
+    color: #333333;
 }
 
 .custom-navbar .nav-link {
@@ -145,3 +149,11 @@ html, body{
     border-bottom-color: #343a40 !important;
 }
 
+/* Mail Chimp */
+#mc_embed_signup {
+    background:#fff; 
+    clear:left; 
+    font:14px 
+    Helvetica,Arial,sans-serif; 
+    width: 600px;
+}
