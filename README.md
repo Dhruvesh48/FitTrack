@@ -57,7 +57,7 @@ The Excercise Plan page provides a description of all the plan and download opti
 ![Excercise Plan Page Wireframe](assets/images/excercise-plan.png)
 
 ### 7. Plan Page Wireframe
-The Plan Page provides a list of the plan avvailabe for user to choose and subscribe.
+The Plan Page provides a list of the plan available for user to choose and subscribe.
 ![Plan Page Wireframe](assets/images/plan-html.png)
 
 ### 8. Profile Page Wireframe
