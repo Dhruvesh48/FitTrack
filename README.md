@@ -170,8 +170,9 @@ The Product Page provides users with a comprehensive view of all available produ
       - Price: Low to High
       - Price: High to Low
       - Rating: High to Low
-      - Rating: Low to High 
-**Not working as expected**
+      - Rating: Low to High
+
+- **Not working as expected**
 
 ### Future Features
 
