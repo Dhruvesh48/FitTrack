@@ -172,7 +172,7 @@ The Product Page provides users with a comprehensive view of all available produ
       - Rating: High to Low
       - Rating: Low to High
 
-- **Not working as expected**
+**Not working as expected**
 
 ### Future Features
 
