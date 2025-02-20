@@ -1,5 +1,6 @@
 {% extends "account/base_entrance.html" %}
 {% load allauth i18n crispy_forms_tags %}
+{% load allauth account %}
 
 {% block head_title %}
     {% trans "Sign Up" %}
@@ -10,12 +11,12 @@
     <h1 class="h3">{% trans "Sign Up" %}</h1>
 </div>
 
-<p class="text-center">
-    {% blocktranslate %}Already have an account? Then please 
-    <a href="{{ login_url }}">sign in</a>.{% endblocktranslate %}
-</p>
-
 {% if not SOCIALACCOUNT_ONLY %}
+    <p class="text-center">
+        {% blocktranslate %}Already have an account? Then please 
+        <a href="{{ login_url }}">sign in</a>.{% endblocktranslate %}
+    </p>
+    
     {% url 'account_signup' as action_url %}
     <form method="post" action="{{ action_url }}">
         {% csrf_token %}
