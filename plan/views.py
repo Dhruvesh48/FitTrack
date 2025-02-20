@@ -11,16 +11,13 @@ def plan_list(request):
 
 def exercise_plan_list(request):
     if not request.user.is_authenticated:
-        return redirect('account_login')  # Redirect to login if the user is not logged in
+        return redirect('account_login')
     
-    # Check if user has an active subscription
     user_subscription = UserSubscription.objects.filter(user=request.user, active=True).first()
 
     if not user_subscription:
-        # If no active subscription, redirect them to the plan list page
-        return redirect('plan_list')  # You can use 'plan_list' URL to redirect to the plan list page
+        return redirect('plan_list')
     
-    # If the user has an active subscription, show the exercise plans
     exercise_plans = ExercisePlan.objects.all()
     max_plans = 4 if user_subscription.plan.duration == 'monthly' else 1
 
