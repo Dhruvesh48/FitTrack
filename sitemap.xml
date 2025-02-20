@@ -9,228 +9,523 @@
 
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/products/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/community/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/community/</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/products/?sort_by=price_low_to_high</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/products/?sort_by=price_high_to_low</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/products/?sort_by=rating_high_to_low</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/products/?sort_by=rating_low_to_high</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/products/?category=equipment</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/products/?category=nutrition</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/products/?category=merchandise</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/wishlist/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/1/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/2/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/3/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/5/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/6/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/7/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/8/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/9/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/10/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/11/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/12/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/14/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/15/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/16/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/13/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/17/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/18/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/19/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/20/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/21/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/22/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/23/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/24/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/products/4/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/community/?category=1</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/community/?category=2</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/community/?category=3</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/community/?category=4</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/community/post/5/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/community/post/6/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/community/post/7/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/community/post/8/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/password/reset/</loc>
-  <lastmod>2024-12-25T05:14:16+00:00</lastmod>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
   <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/community/?category=1</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/community/?category=2</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/community/?category=3</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/community/?category=4</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/community/post/5/</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/community/post/6/</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/community/post/7/</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=/community/post/8/</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fwishlist%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F1%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F2%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F3%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F5%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F6%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F7%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F8%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F9%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F10%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F11%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F12%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F14%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F15%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F16%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F13%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F17%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F18%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F19%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F20%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F21%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F22%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F23%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F24%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fproducts%2F4%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fcommunity%2Fpost%2F5%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fcommunity%2Fpost%2F6%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fcommunity%2Fpost%2F7%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/signup/?next=%2Fcommunity%2Fpost%2F8%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2Fwishlist%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F1%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F2%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F3%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F5%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F6%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F7%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F8%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F9%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F10%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F11%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F12%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F14%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F15%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F16%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F13%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F17%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F18%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F19%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F20%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F21%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F22%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F23%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F24%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fproducts%2F4%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fcommunity%2Fpost%2F5%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fcommunity%2Fpost%2F6%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fcommunity%2Fpost%2F7%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-track-fitness-20c3b7848895.herokuapp.com/accounts/login/?next=%2Fcommunity%2Fpost%2F8%2F</loc>
+  <lastmod>2025-02-20T22:45:58+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 
 
