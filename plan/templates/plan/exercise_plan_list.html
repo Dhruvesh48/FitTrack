@@ -43,11 +43,9 @@
             <p class="text-center">No exercise plans available.</p>
         {% endif %}
     {% else %}
-    {% if not request.user.is_authenticated %}
         <div class="alert text-center">
             <p>You need to <a href="{% url 'account_login' %}?next={{ request.path }}">log in</a> to access full features.</p>
         </div>
-    {% endif %}
     {% endif %}
 
 
