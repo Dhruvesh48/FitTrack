@@ -20,12 +20,19 @@
                             </div>
                             <div class="card-body">
                                 <p class="card-text">{{ plan.description|truncatewords:30 }}</p>
-                                {% if forloop.counter <= max_plans %}
+
+                                {% if max_plans > 0 and forloop.counter <= max_plans %}
                                     <a href="{{ plan.file.url }}" class="btn btn-outline-secondary btn-block mt-2" download>
                                         Download Plan
                                     </a>
                                 {% else %}
-                                    <p class="text-center mt-2 text-muted">You have reached your download limit.</p>
+                                    <p class="text-center mt-2 text-muted">
+                                        {% if max_plans == 0 %}
+                                            Upgrade your subscription to download.
+                                        {% else %}
+                                            You have reached your download limit.
+                                        {% endif %}
+                                    </p>
                                 {% endif %}
                             </div>
                         </div>
@@ -36,10 +43,13 @@
             <p class="text-center">No exercise plans available.</p>
         {% endif %}
     {% else %}
+    {% if not request.user.is_authenticated %}
         <div class="alert text-center">
-            <p>You need to <a href="{% url 'account_login' %}?next={{ request.path }}">log in</a> to check out the plans.</p>
+            <p>You need to <a href="{% url 'account_login' %}?next={{ request.path }}">log in</a> to access full features.</p>
         </div>
     {% endif %}
+    {% endif %}
+
 
 
 
