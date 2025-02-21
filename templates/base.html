@@ -167,11 +167,11 @@
         <!--Stripe-->
         <script src="https://js.stripe.com/v3/"></script>
         <!--Mail chimp-->
-        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+        <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
         
     {% endblock %}
     {% block extra_js %}
-    <script type="text/javascript">
+    <script>
         (function ($) { 
             window.fnames = new Array(); 
             window.ftypes = new Array(); 
@@ -194,7 +194,7 @@
     </script>
     {% endblock %}
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
     {% endblock %}

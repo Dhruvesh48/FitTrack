@@ -4,6 +4,9 @@
 
 The FitTrack App is a user-friendly platform designed to support individuals in their fitness journeys. It provides tools to browse fitness products, subscribe to plans, access exercise guides, and engage with a fitness-focused community. With features like order tracking, workout downloads, and a user-centric community space, the app aims to simplify fitness management.
 
+![Screenshot of responsiveness of the project](assets/images/responsive-design-checker.png)
+Visit the deployed site here :[Fit Track fitness](https://fit-track-fitness-20c3b7848895.herokuapp.com/)
+
 ---
 
 ## Design
@@ -736,6 +739,19 @@ The **Checkout Success Page** is displayed to the user after a successful order 
 
 ---
 
+### W3C Validator
+
+[W3C](https://validator.w3.org/) was used to validate all HTML pages, as well as the [CSS](https://jigsaw.w3.org/css-validator/#validate_by_uri) also [Jshint](https://jshint.com/) was used to validate JavaScript
+  
+- html page W3C HTML Validation - Pass
+   ![HTML Validator results](assets/images/html-validator.png)
+- style.css CSS Validation - Pass
+   ![CSS Validator results](assets/images/css-validator.png)
+- script.js JavaScript Validation - Pass
+   ![JavaScript Validator results](assets/images/jshint.png)
+
+---
+
 ## Manual Testing
 
 ### Responsiveness
@@ -757,6 +773,9 @@ Each page has been inspected on variety of devices such as mobile, laptop, deskt
 - [Google Dev tools](https://developer.chrome.com/docs/) - to troubleshoot and test issues during the development.
 - [MDN webdocs](https://developer.mozilla.org/en-US/) - reference
 - [W3C schools](https://www.w3schools.com/) - for resolving code format in CSS and HTML.
+- [W3C HTML validator](https://validator.w3.org/) - To validate all the HTML file.
+- [W3C CSS validator](https://jigsaw.w3.org/css-validator/) - To validate CSS file.
+- [Jshint validator](https://jshint.com/) - To validate JavaScript file. 
 - [Color Hunt](https://colorhunt.co/) - for choosing the color palettes.
 - [Pinterest](https://uk.pinterest.com/) - All products images.
 - [Mitsology](https://mitsology.com/debunking-common-myths-and-misconceptions-about-health-and-fitness/) - For Facebook cover page
@@ -804,3 +823,42 @@ Each page has been inspected on variety of devices such as mobile, laptop, deskt
 5. Open your terminal or command prompt.
 6. Navigate to the directory where you want to clone your repository.
 7. Use the `git clone` command followed by the URL that you have copied.
+
+## Heroku Deployment Guide
+
+### **1. Prepare Your Project**
+- Make sure your Django project is pushed to a GitHub repository (use the `main` branch).
+- Ensure that your `requirements.txt` file includes all necessary dependencies.
+
+### **2. Set Up Heroku**
+- **Create a Heroku Account**: [Sign up for Heroku](https://signup.heroku.com/).
+- **Create a New App on Heroku**:
+  1. Visit your Heroku dashboard.
+  2. Click on **New** and select **Create new app**.
+  3. Choose a name for your app and select a region.
+  
+### **3. Configure the App on Heroku**
+- **Add Configuration Variables (Config Vars)**:
+  1. Go to the **Settings** tab in your Heroku app's dashboard.
+  2. Scroll to **Config Vars** and add the all keys that is required
+
+### **4. Link Your GitHub Repository to Heroku**
+- **Link GitHub Repo**:
+  1. Go to the **Deploy** tab in the Heroku dashboard.
+  2. Scroll to **Deployment method** and select **GitHub**.
+  3. Sign in to your GitHub account and search for your repository.
+  4. Click **Connect** to link the repository.
+
+### **5. Deploy Your App**
+- **Manual Deployment**:
+  1. Scroll down to **Manual Deploy**.
+  2. Select the `main` branch or your desired branch.
+  3. Click **Deploy Branch** to manually deploy your app.
+
+- Once the deployment is successful, you’ll see a **View App** button. Click it to access your live app.
+
+### **6. Make Future Deployments**
+- For future deployments:
+  1. Go to the **Deploy** tab on Heroku.
+  2. Scroll to **Manual Deploy**.
+  3. Click **Deploy Branch** to deploy your latest changes.
