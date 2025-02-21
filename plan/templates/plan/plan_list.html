@@ -8,7 +8,13 @@
 {% block content %}
   <div class="container my-5">
     <h1 class="text-center mb-4">Available Subscription Plans</h1>
-    
+
+    {% if not request.user.is_authenticated %}
+        <div class="alert alert-info text-center">
+            <p>You need to <a href="{% url 'account_login' %}?next={{ request.path }}">log in</a> to access full features.</p>
+        </div>
+    {% endif %}
+
     <div class="row">
       {% for plans in plan %}
         <div class="col-md-4 mb-4">
@@ -33,5 +39,4 @@
       {% endfor %}
     </div>
   </div>
-  
 {% endblock %}

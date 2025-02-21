@@ -9,7 +9,11 @@
 <div class="container my-5">
     <h1 class="text-center mb-4">Your Exercise Plans</h1>
 
-    {% if request.user.is_authenticated %}
+    {% if not is_logged_in %}
+        <div class="alert text-center">
+            <p>You need to <a href="{% url 'account_login' %}?next={{ request.path }}">log in</a> to access full features.</p>
+        </div>
+    {% else %}
         {% if exercise_plans %}
             <div class="row">
                 {% for plan in exercise_plans %}
@@ -42,18 +46,10 @@
         {% else %}
             <p class="text-center">No exercise plans available.</p>
         {% endif %}
-    {% else %}
-        <div class="alert text-center">
-            <p>You need to <a href="{% url 'account_login' %}?next={{ request.path }}">log in</a> to access full features.</p>
-        </div>
     {% endif %}
-
-
-
-
-
 </div>
 {% endblock %}
+
 
 {% block extra_js %}
 {{ block.super }}
